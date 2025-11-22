@@ -27,7 +27,7 @@
 - if data in redux store so while navigating page should not make api call again and again
 - You should not access other routes without login
 - If token is not present i.e without login redirect to login page
-
+- Logout feature + error error handling on invalid login
 
 
 Body 

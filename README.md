@@ -22,6 +22,12 @@
 - useSelector to get data and show user on navBar only when login
 - Refactor our code to add constants file + create a components folder 
 
+- if page refresh redux store data cleared but cookies still there, make api call if page refresh 
+ make sure user is still login
+- if data in redux store so while navigating page should not make api call again and again
+- You should not access other routes without login
+- If token is not present i.e without login redirect to login page
+
 
 
 Body 

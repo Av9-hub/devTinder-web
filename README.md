@@ -28,7 +28,9 @@
 - You should not access other routes without login
 - If token is not present i.e without login redirect to login page
 - Logout feature + error error handling on invalid login
+- Get the feed and add in the store
 - Build /feed and userCard; 
+- Build Edit Profile feature
 
 
 Body 

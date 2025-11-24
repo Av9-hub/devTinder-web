@@ -15,7 +15,7 @@ const Feed = () => {
         return;
       }
       const feedUser=await axios.get(BASE_URL+"/feed",{withCredentials:true});
-      console.log(feedUser.data.data);
+      // console.log(feedUser.data.data);
       dispatch(addFeed(feedUser?.data?.data));
     }
     catch(err){
@@ -27,7 +27,7 @@ const Feed = () => {
     },[]);
 
   return (
-    feed&&(<div>
+    feed&&(<div className='mt-14'>
       
       <UserCard user={feed[0]}/> 
     </div>)

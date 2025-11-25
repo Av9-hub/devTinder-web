@@ -8,15 +8,15 @@ import { addUser } from '../utils/userSlice';
 
 const EditProfile = ({user}) => {
 
-  const [firstName,setFirstName]=useState(user.firstName);
-  const [lastName,setLastName]=useState(user.lastName);
-  const [gender,setGender]=useState(user.gender);
-  const [age,setAge]=useState(user.age);
-  const [gmail,setGmail]=useState(user.gmail);
-  const [about,setAbout]=useState(user.about);
-  const [skills,setSkills]=useState(user.skills);
-  const [image,setImage]=useState(user.image);
-  const [degree,setDegree]=useState(user.degree);
+  const [firstName,setFirstName]=useState(user.firstName||"");
+  const [lastName,setLastName]=useState(user.lastName||"");
+  const [gender,setGender]=useState(user.gender||"");
+  const [age,setAge]=useState(user.age||"");
+  const [gmail,setGmail]=useState(user.gmail||"");
+  const [about,setAbout]=useState(user.about||"");
+  const [skills,setSkills]=useState(user.skills||"");
+  const [image,setImage]=useState(user.image||"");
+  const [degree,setDegree]=useState(user.degree||"");
   const [error,setError]=useState("");
   const dispatch=useDispatch();
   const [showToast,setShowToast]=useState(false);
@@ -124,21 +124,20 @@ const Gender=["male","female","other"];
         />
 
       <p className='text-red-600 mb-8'>{error}</p>
-      <label className="label font-semibold text-sm text-white  mr-3.5">
-      Gender:
-    </label>
+      
     <select
       value={gender}
       onChange={(e) => setGender(e.target.value)}
       className="bg-white h-9 font-semibold rounded-md text-neutral-950 "
     >
+      <option value="">Select gender</option> 
       {Gender.map((g) => (
         <option className='font-bold mr-7 ' key={g} value={g}>
           {g}
         </option>
       ))}
     </select>
-    <button className="btn  bg-blue-900 ml-11 " onClick={handleClick} >Save</button>
+    <button className="btn  bg-blue-900 ml-[72px] " onClick={handleClick} >Save</button>
     </div>
 
   </fieldset>

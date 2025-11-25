@@ -5,6 +5,9 @@ import axios from 'axios';
 import { BASE_URL } from '../utils/constants';
 import { useNavigate } from 'react-router-dom';
 import { removeUser } from '../utils/userSlice';
+import { clearConnection } from '../utils/connectionSlice';
+import {clearFeed} from '../utils/feedSlice'
+import { clearRequest } from '../utils/requestSlice';
 
 const NavBar = () => {
     const user=useSelector(store=>store.user);
@@ -17,6 +20,9 @@ const NavBar = () => {
         )
         navigate("/login");
         dispatch(removeUser());
+        dispatch(clearConnection());
+        dispatch(clearFeed());
+        dispatch(clearRequest());
         }
         catch(err){
             console.error(err);

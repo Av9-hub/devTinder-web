@@ -12,11 +12,10 @@ const Requests = () => {
     const getRequests=async()=>{
         try{
         const requests=await axios.get(BASE_URL+"/user/requests/receieved",{withCredentials:true});
-        console.log(requests.data.connectionRequests);
         dispatch(addRequest(requests.data.connectionRequests));
         }
         catch(err){
-            console.log(err);
+            console.error(err);
         }
     }
     useEffect(()=>{

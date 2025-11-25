@@ -1,10 +1,26 @@
+import axios from 'axios';
 import React from 'react'
+import { BASE_URL } from '../utils/constants';
+import { useDispatch } from 'react-redux';
+import { removeFeed } from '../utils/feedSlice';
 
 
 const UserCard = ({user}) => {
-    const {firstName,lastName,image,age,gender,about}=user;
-    console.log(gender);
-    console.log(age);
+    const {firstName,lastName,image,age,gender,about,_id}=user;
+    const dispatch=useDispatch();
+    const sendRequest=async(status)=>{
+      try{
+        const data=await axios.post(BASE_URL+"/request/send/"+status+"/"+_id,{},
+          {withCredentials:true});
+        dispatch(removeFeed(_id));
+
+      }
+      catch(err){
+        console.error(err);
+      }
+    }
+    
+    
   return (
         <div className=' '>
           <div className="card bg-base-300 w-70 h-[450px] mx-auto shadow-sm">
@@ -18,8 +34,8 @@ const UserCard = ({user}) => {
         <p className='mt-0'>{user.about}</p>
         {age&&gender&&<span>{age +"  "+gender}</span>}
         <div className="card-actions justify-between">
-        <button className="btn btn-primary h-8">Ignore❌</button>
-        <button className="btn bg-pink-200 h-8 text-black">Intrested❤️</button>
+        <button onClick={()=>sendRequest("ignored")} className="btn btn-primary h-8">Ignore❌</button>
+        <button onClick={()=>sendRequest("interested")} className="btn bg-pink-200 h-8 text-black">Intrested❤️</button>
 
         </div>
     </div>

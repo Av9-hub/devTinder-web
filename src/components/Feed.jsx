@@ -7,6 +7,7 @@ import { addFeed } from '../utils/feedSlice'
 
 const Feed = () => {
   const feed=useSelector(store=>store?.feed);
+  console.log(feed);
   const dispatch=useDispatch();
 
     const getFeed=async()=>{
@@ -15,7 +16,6 @@ const Feed = () => {
         return;
       }
       const feedUser=await axios.get(BASE_URL+"/feed",{withCredentials:true});
-      // console.log(feedUser.data.data);
       dispatch(addFeed(feedUser?.data?.data));
     }
     catch(err){
@@ -26,7 +26,12 @@ const Feed = () => {
       getFeed()
     },[]);
 
-    if(!feed||feed.length===0){
+    if(!feed){
+        return <p className='text-3xl text-center mt-10'>Please Wait...  </p>
+
+    }
+      
+    if(feed.length===0){
       return <p className='text-3xl text-center mt-10'>Nothing to show  :(</p>
       
     }

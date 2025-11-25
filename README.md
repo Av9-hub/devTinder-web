@@ -35,6 +35,7 @@
 - New- Page: See all my connections
 - New- Page: See all my reuests
 - Review request receieved
+- Send connection request
 
 
 Body 
@@ -43,3 +44,12 @@ Body
     Route=/login =>Login
     Route=/profile =>Profile
     Route=/connections=> Connections
+
+# Bug fixed by me
+- Clear all slices after logout
+
+# There is bug in edit profile feature
+- If fields with type enum(degree,gender) are empty then and clicked on save then we will get error
+- We can add empty string in enum in backend (Backend change)
+- We can filter out the changed field only and send to backend (frontend change) so that required field give us error is it become empty
+- If we try to ignore the "" then required field will not change also will not give error on setting it to "" so better to use 2nd apprach

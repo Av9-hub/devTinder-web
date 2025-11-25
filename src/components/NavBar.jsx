@@ -29,7 +29,7 @@ const NavBar = () => {
         <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
     </div>
     {user&&(<div className="flex gap-2 items-center">
-        
+        <Link to="/requests">requests</Link>
         <div>{"Welcome, "+user.firstName}</div>
         <div className="dropdown dropdown-end mx-10">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -48,7 +48,7 @@ const NavBar = () => {
                 <span className="badge">New</span>
             </Link>
             </li>
-            <li><a>Settings</a></li>
+            <li><Link to="/connections">Connections</Link></li>
             <li><a onClick={handleLogout}>Logout</a></li>
         </ul>
         </div>

@@ -26,8 +26,13 @@ const Feed = () => {
       getFeed()
     },[]);
 
+    if(!feed||feed.length===0){
+      return <p className='text-3xl text-center mt-10'>Nothing to show  :(</p>
+      
+    }
+
   return (
-    feed&&(<div className='mt-14'>
+    (<div className='mt-14'>
       
       <UserCard user={feed[0]}/> 
     </div>)

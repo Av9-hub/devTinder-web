@@ -78,7 +78,7 @@ const Gender=["male","female","other"];
     <textarea
        type="text"
         value={about}
-         className="input bg-white h-[103px] mb-3.5  text-neutral-950"
+         className="input bg-white h-[103px] mb-3.5  text-neutral-950  whitespace-pre-wrap wrap-break-words"
          onChange={(e)=>setAbout(e.target.value)}
          placeholder='Write about yourself.....'
 

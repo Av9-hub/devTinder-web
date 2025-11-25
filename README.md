@@ -31,6 +31,10 @@
 - Get the feed and add in the store
 - Build /feed and userCard; 
 - Build Edit Profile feature
+- Show toast message on save of profile
+- New- Page: See all my connections
+- New- Page: See all my reuests
+- Review request receieved
 
 
 Body 

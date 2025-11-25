@@ -7,7 +7,7 @@ const UserCard = ({user}) => {
     console.log(age);
   return (
         <div className=' '>
-            <div className="card bg-base-300 w-70 h-[450px] mx-auto shadow-sm">
+          <div className="card bg-base-300 w-70 h-[450px] mx-auto shadow-sm">
     <figure className='overflow-hidden w-full h-3/4'>
         <img className='w-full h-full mt-0'
         src={image}

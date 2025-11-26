@@ -8,9 +8,11 @@ import { removeUser } from '../utils/userSlice';
 import { clearConnection } from '../utils/connectionSlice';
 import {clearFeed} from '../utils/feedSlice'
 import { clearRequest } from '../utils/requestSlice';
+import logo from '../assets/Logo.png'
 
 const NavBar = () => {
     const user=useSelector(store=>store.user);
+    const request=useSelector(store=>store.requests);
     const navigate=useNavigate();
     const dispatch=useDispatch();
     const handleLogout=async()=>{
@@ -31,12 +33,19 @@ const NavBar = () => {
     
   return (
        <div className="navbar bg-base-300 shadow-sm ">
-    <div className="flex-1 mx-10">
+    <div className="flex-1 mx-10 ">
+        <div className='flex'>
+        {/* //<img className='w-10 h-10 ' src={logo}/> */}
         <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
+        </div>
     </div>
     {user&&(<div className="flex gap-2 items-center">
-        <Link to="/requests">requests</Link>
-        <div>{"Welcome, "+user.firstName}</div>
+        <Link to="/requests"><button className="btn">
+        Request{ request&&<div className="badge badge-sm">{request.length}</div>}
+        </button>
+
+        </Link>
+        <div className='font-bold'>{"Welcome, "+user.firstName}</div>
         <div className="dropdown dropdown-end mx-10">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">

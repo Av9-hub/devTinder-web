@@ -34,7 +34,11 @@ const Requests = () => {
     }
     }
     
-    if(!requestData||requestData.length===0){
+    if(!requestData){
+        return <h2 className='text-3xl text-center mt-10'>Please wait...</h2>
+
+    }
+    if(requestData.length===0){
         return <h2 className='text-3xl text-center mt-10'>No Request Found.</h2>
     }
   return (
@@ -58,8 +62,8 @@ const Requests = () => {
                 <br/>
                  <p className='text-[12px]'>{about}</p> 
                 </div>
-                <button onClick={()=>reviewRequest("accepted",r._id)} className='bg-pink-300 mx-3 text-black font-semibold rounded-sm p-1'>Accepted</button>
-                <button onClick={()=>reviewRequest("rejected",r._id)} className='bg-blue-500 font-semibold text-black rounded-sm mr-1.5 p-1'>Rejected</button>
+                <button onClick={()=>reviewRequest("accepted",r._id)} className='bg-blue-500 mx-3 text-black font-semibold rounded-sm p-1'>Accepted</button>
+                <button onClick={()=>reviewRequest("rejected",r._id)} className='bg-pink-300 font-semibold text-black rounded-sm mr-1.5 p-1'>Rejected</button>
                 
             </div>
             

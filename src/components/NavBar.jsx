@@ -8,7 +8,7 @@ import { removeUser } from '../utils/userSlice';
 import { clearConnection } from '../utils/connectionSlice';
 import {clearFeed} from '../utils/feedSlice'
 import { clearRequest } from '../utils/requestSlice';
-import logo from '../assets/Logo.png'
+//import logo from '../assets/Logo.png'
 
 const NavBar = () => {
     const user=useSelector(store=>store.user);

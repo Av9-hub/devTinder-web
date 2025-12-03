@@ -18,6 +18,24 @@ const Footer = () => {
     </svg>
     <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
+  
+    {/* PRIVACY POLICY LINKS */}
+  <nav  className='grid-flow-col gap-4 md:place-self-center md:justify-self-end text-sm'>
+    <a href='https://merchant.razorpay.com/policy/Rn3Cqk6HrWNodu/refund'>Cancellation & Refund  </a>
+    <span>|</span>
+
+    <a href='https://merchant.razorpay.com/policy/Rn3Cqk6HrWNodu/contact_us'>Contact us</a>
+    <span>|</span>
+
+    <a href='https://merchant.razorpay.com/policy/Rn3Cqk6HrWNodu/privacy'>Privacy</a>
+    <span>|</span>
+
+    <a href='https://merchant.razorpay.com/policy/Rn3Cqk6HrWNodu/terms'> Terms & Conditions</a>
+    <span>|</span>
+
+    <a href='https://merchant.razorpay.com/policy/Rn3Cqk6HrWNodu/shipping'>Shipping</a>
+  </nav>
+
   <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
     <a>
       <svg

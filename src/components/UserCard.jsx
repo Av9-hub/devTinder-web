@@ -8,6 +8,7 @@ import { removeFeed } from '../utils/feedSlice';
 const UserCard = ({user}) => {
     const {firstName,lastName,image,age,gender,about,_id}=user;
     const dispatch=useDispatch();
+    
     const sendRequest=async(status)=>{
       try{
         const data=await axios.post(BASE_URL+"/request/send/"+status+"/"+_id,{},
@@ -16,10 +17,10 @@ const UserCard = ({user}) => {
 
       }
       catch(err){
-        console.error(err);
+        console.error("error in useCard"+err);
       }
-    }
-    
+}
+  
     
   return (
         <div className=' '>

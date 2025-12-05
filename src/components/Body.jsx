@@ -33,7 +33,7 @@ const Body = () => {
   useEffect(()=>{
     if(!userData)
     fetchUser();
-  },[userData]);
+  },[]);
 
   return (
         <div>           

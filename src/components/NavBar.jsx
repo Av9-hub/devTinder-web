@@ -39,12 +39,15 @@ const NavBar = () => {
         <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
         </div>
     </div>
+        
     {user&&(<div className="flex gap-2 items-center">
-        <Link to="/requests"><button className="btn">
+        <Link to="/requests"><button className="mr-2 bg-base-300 border-none">
         Request{ request&&<div className="badge badge-sm">{request.length}</div>}
         </button>
-
         </Link>
+
+        <Link to="/payment" className='mx-2 mr-5'>Subscription</Link>
+
         <div className='font-bold'>{"Welcome, "+user.firstName}</div>
         <div className="dropdown dropdown-end mx-10">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">

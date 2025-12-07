@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addUser } from '../utils/userSlice'
 import {useNavigate } from 'react-router'
 import axios from 'axios'
+import { addConnection } from '../utils/connectionSlice'
 
 const Body = () => {
   const dispatch=useDispatch();
@@ -34,6 +35,16 @@ const Body = () => {
     if(!userData)
     fetchUser();
   },[]);
+
+ const getConnections=async()=>{
+          const connections=await axios.get(BASE_URL+"/user/connections",{withCredentials:true});
+          dispatch(addConnection(connections.data.data));
+      }
+    useEffect(()=>{
+       if(userData&&userData?._id){
+        getConnections();
+      }
+    },[userData?._id]);
 
   return (
         <div>           

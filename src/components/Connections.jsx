@@ -7,7 +7,17 @@ import { Link } from 'react-router'
 
 const Connections = () => {
     const userConnections=useSelector(store=>store.connections);
-    
+    const dispatch=useDispatch();
+    const getConnections=async()=>{
+          const connections=await axios.get(BASE_URL+"/user/connections",{withCredentials:true});
+          dispatch(addConnection(connections.data.data));
+      }
+    useEffect(()=>{
+       
+        getConnections();
+      
+    },[]);
+
      if(!userConnections){
         return <h3 className='text-3xl text-center mt-10'>Loading..</h3>
 

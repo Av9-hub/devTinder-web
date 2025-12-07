@@ -21,6 +21,7 @@ const Chat = () => {
       withCredentials:true,
     })
     console.log(res);
+
     const chatMessages=res?.data?.messages.map((msg)=>{
       const {senderId,text}=msg;
       return {

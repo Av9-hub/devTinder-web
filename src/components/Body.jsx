@@ -15,7 +15,7 @@ const Body = () => {
   const userData=useSelector(store=>store.user);
 
   const fetchUser=async()=>{
-    try{      
+    try{       
       const user=await axios.get(BASE_URL+"/profile/view",
         {withCredentials:true}
       );

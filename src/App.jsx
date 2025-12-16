@@ -9,12 +9,14 @@ import Connections from "./components/Connections"
 import Requests from "./components/Requests"
 import Payment from "./components/Payment"
 import Chat from "./components/Chat"
+import { GoogleOAuthProvider } from "@react-oauth/google"
 
 
 function App() {
 
   return (
     <>
+      <GoogleOAuthProvider clientId="358138617282-313s54tigkpij6iu3i8vrs0db2qhrq0l.apps.googleusercontent.com">
       <Provider store={appStore}>
       <BrowserRouter basename="/">
       <Routes>
@@ -36,6 +38,7 @@ function App() {
         Hello world!
       </h1> */}
       </Provider>
+      </GoogleOAuthProvider>
     </>
   )
 }
